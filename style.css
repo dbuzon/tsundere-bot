@@ -91,8 +91,8 @@ hr {
 .chat-bubble {
     max-width: 75%;
     font-size: 1.125rem;
-    line-height: 1.5;
-    padding: 0.5rem 1rem;
+    letter-spacing: 0.02rem;
+    padding: 0.75rem 1.25rem;
     margin: 5px 0px;
     animation: expand-bounce 500ms forwards;
 }
