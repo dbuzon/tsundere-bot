@@ -17,6 +17,7 @@ const getResponse = async (message) => {
     lastMessages.push(message);
     const response = await setTimeout(() => {return "ok";}, 2000)
     createChatBubble(response, "tsundere");
+    lastMessages.push(response);
 }
 
 const sendMessage = () => {
