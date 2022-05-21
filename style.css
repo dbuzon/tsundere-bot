@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --background-color: hsl(211, 51%, 9%);
+    --shade-color: hsl(215, 36%, 25%);
+    --accent-color: hsl(340, 89%, 72%);
+    --font-color: hsl(0, 0%, 100%);
+    --muted-color: hsl(212, 24%, 70%);
+    --primary-font: 'Rubik', sans-serif;    
+    font-size: calc(10px + 0.33vw);
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100vw;
+    background-color: var(--background-color);
+    color: var(--font-color);
+    display: flex;
+    justify-content: center;
+    font-family: var(--primary-font);
+}
+
+h1 {
+    font-size: 1.9rem;
+    font-weight: 600;
+}
+
+input {
+    width: 80%;
+    height: fit-content;
+    font-family: var(--primary-font);
+    background-color: transparent;
+    border: none;
+    color: var(--font-color);
+    
+}
+
+input::placeholder {
+    color: var(--muted-color);    
+    font-size: 1.125rem;
+}
+
+input:focus {
+    outline: none;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--muted-color);
+    margin: 10px 0px;
+}
+
+.logo {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    color: var(--accent-color);
+}
+
+.circle {
+    background-color: var(--accent-color);
+    padding: 0.4rem;
+    border-radius: 100%;
+    height: 1.75rem;
+}
+
+.circle svg {
+    font-size: 1.75rem;    
+    color: var(--background-color); 
+}
+
+.wrapper {
+    max-width: 600px;
+    margin: 2vh 5vw;
+}
+
+.chat {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    justify-content: flex-end;
+}
+
+.chat-bubble {
+    max-width: 75%;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    padding: 0.5rem 1rem;
+    margin: 10px 0px;
+}
+
+.tsundere {
+    background-color: var(--accent-color);
+    border-radius: 20px 20px 20px 0px;
+    align-self: flex-start;
+}
+
+.user {
+    background-color: var(--shade-color);
+    border-radius: 20px 20px 0px 20px;
+    align-self: flex-end;
+}
+
+.text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 1.125rem;
+}
+
+.text svg {
+    color: var(--accent-color);
+    font-size: 1.75rem;
+    transition: all ease 200ms;
+}
+
+.text svg:hover {
+    cursor: pointer;
+    opacity: 70%;
+}
+
+.footer {
+    font-size: 1rem;
+    color: var(--muted-color);
+    font-weight: 300;
+    text-align: center;
+    margin: 20px 0px;
+}
