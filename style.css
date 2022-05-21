@@ -94,7 +94,20 @@ hr {
     line-height: 1.5;
     padding: 0.5rem 1rem;
     margin: 10px 0px;
+    animation: expand-bounce 500ms forwards;
 }
+
+@keyframes expand-bounce {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+}   
 
 .tsundere {
     background-color: var(--accent-color);
