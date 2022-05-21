@@ -30,6 +30,7 @@ body {
 h1 {
     font-size: 1.9rem;
     font-weight: 600;
+    margin-left: 1rem;
 }
 
 input {
@@ -66,7 +67,6 @@ hr {
 .circle {
     background-color: var(--accent-color);
     padding: 0.4rem;
-    margin-right: 1rem;
     border-radius: 100%;
     height: 1.75rem;
 }
@@ -93,7 +93,7 @@ hr {
     font-size: 1.125rem;
     line-height: 1.5;
     padding: 0.5rem 1rem;
-    margin: 10px 0px;
+    margin: 5px 0px;
     animation: expand-bounce 500ms forwards;
 }
 
