@@ -1,6 +1,6 @@
 const chat = document.getElementsByClassName("chat")[0]
 const userInput = document.querySelector("input");
-const sendBtn = document.getElementsByClassName("iconify send")[0];
+const sendBtn = document.getElementsByClassName("send")[0];
 
 const createChatBubble = (message) => {
     let chatBubble = '<div class="chat-bubble user">'+ message +'</div>'
@@ -19,5 +19,5 @@ const sendMessage = () => {
 
 sendBtn.addEventListener("click", sendMessage);
 userInput.addEventListener("keypress", (event) => {
-    if (event.key === 'Enter') sendMessage();s
+    if (event.key === 'Enter') sendMessage();
 })

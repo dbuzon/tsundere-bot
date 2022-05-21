@@ -129,13 +129,13 @@ hr {
     font-size: 1.125rem;
 }
 
-.text svg {
+.send svg {
     color: var(--accent-color);
     font-size: 1.75rem;
     transition: all ease 200ms;
 }
 
-.text svg:hover {
+.send svg:hover {
     cursor: pointer;
     opacity: 70%;
 }
