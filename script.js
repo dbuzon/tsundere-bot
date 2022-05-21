@@ -4,10 +4,12 @@ const sendBtn = document.getElementsByClassName("send")[0];
 let lastMessages = ["Hello, I’m TsunderAI-chan. You can ask me some questions, but I don’t have much time. Be quick! 😤"]
 
 const createChatBubble = (message, type) => {
-    let chatBubble;
-    if (type === "user") chatBubble = '<div class="chat-bubble user">'+ message +'</div>'
-    else chatBubble = '<div class="chat-bubble tsundere">'+ message +'</div>'
-    chat.innerHTML += chatBubble
+    let chatBubble = document.createElement("div");
+    chatBubble.classList.add("chat-bubble");
+    if (type === "user") chatBubble.classList.add("user");
+    else chatBubble.classList.add("tsundere");
+    chatBubble.innerText = message;
+    chat.appendChild(chatBubble)
 }
 
 const getResponse = async (message) => {
@@ -19,7 +21,9 @@ const getResponse = async (message) => {
 
 const sendMessage = () => {
     let message = userInput.value;
-    if (!message) alert("Please type something before hitting the send button!");
+    if (!message) {
+        alert("Please type something before hitting the send button!");
+    }
     else {
         createChatBubble(message, "user");
         getResponse(message);
