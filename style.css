@@ -94,18 +94,15 @@ hr {
     letter-spacing: 0.02rem;
     padding: 0.75rem 1.25rem;
     margin: 5px 0px;
-    animation: expand-bounce 500ms forwards;
+    animation: fade-in 500ms ease-in;
 }
 
-@keyframes expand-bounce {
+@keyframes fade-in {
     0% {
-      transform: scale(0);
-    }
-    50% {
-      transform: scale(1.1);
-    }
+      opacity: 0;
+    }    
     100% {
-      transform: scale(1);
+      opacity: 1;
     }
 }   
 
