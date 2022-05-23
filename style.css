@@ -58,6 +58,14 @@ hr {
     margin: 10px 0px;
 }
 
+.wrapper {
+    max-width: 600px;
+    max-height: 100%;
+    margin: 2vh 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 .logo {
     display: flex;
     align-items: center;
@@ -76,25 +84,29 @@ hr {
     color: var(--background-color); 
 }
 
-.wrapper {
-    max-width: 600px;
-    margin: 2vh 5vw;
+.chat {    
+    height: 80%;    
+    overflow-y: scroll;
 }
 
-.chat {
-    display: flex;
-    flex-direction: column;
-    height: 80%;
-    justify-content: flex-end;
+.chat::-webkit-scrollbar {
+    width: 2px;
+}
+
+.chat::-webkit-scrollbar-thumb {
+    border-radius: 1px;
+    background-color: var(--muted-color);
 }
 
 .chat-bubble {
     max-width: 75%;
+    width: fit-content;
     font-size: 1.125rem;
     letter-spacing: 0.02rem;
     padding: 0.75rem 1.25rem;
-    margin: 5px 0px;
+    margin: 0.5rem 0rem;
     animation: fade-in 500ms ease-in;
+    border-radius: 20px 20px 20px 0px;
 }
 
 @keyframes fade-in {
@@ -108,21 +120,16 @@ hr {
 
 .tsundere {
     background-color: var(--accent-color);
-    border-radius: 20px 20px 20px 0px;
-    align-self: flex-start;
 }
 
 .user {
-    background-color: var(--shade-color);
-    border-radius: 20px 20px 0px 20px;
-    align-self: flex-end;
+    background-color: var(--shade-color);    
 }
 
 .text {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
     font-size: 1.125rem;
 }
 
@@ -142,5 +149,4 @@ hr {
     color: var(--muted-color);
     font-weight: 300;
     text-align: center;
-    margin: 20px 0px;
 }
