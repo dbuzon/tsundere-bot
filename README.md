@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="./logo.PNG" width="400px">
+</div>
+
 <h1 align="center">TsunderAI</h1>
 <h3 align="center">A tsundere chatbot powered by GPT-3 🌸</h3>
 
