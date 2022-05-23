@@ -27,7 +27,7 @@ const getResponse = async (message) => {
 
     const header = new Headers({
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer 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'
+        'Authorization': 'Bearer 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'
     });
     const url = "https://api.openai.com/v1/engines/text-davinci-002/completions";
     const response = await fetch(url, {
