@@ -1,7 +1,7 @@
 const chat = document.getElementsByClassName("chat")[0]
 const userInput = document.querySelector("input");
 const sendBtn = document.getElementsByClassName("send")[0];
-let lastMessages = ["Hello, I’m TsunderAI-chan. You can ask me some questions, but I don’t have much time. Be quick! 😤"]
+let lastMessages = ["what do you do?", "Hello, I’m TsunderAI-chan. You can ask me some questions, but I don’t have much time. Be quick! 😤"]
 
 const createChatBubble = (message, type) => {
     let chatBubble = document.createElement("div");
@@ -12,18 +12,41 @@ const createChatBubble = (message, type) => {
     chat.appendChild(chatBubble)
 }
 
+const getPrompt = () => {
+    let prompt = "Answer me as a tsundere character would:\n";
+    prompt += `q: ${lastMessages[0]}\n`;
+    prompt += `a: ${lastMessages[1]}\n`;
+    prompt += `q: ${lastMessages[2]}\n`;
+    prompt += `a: `;
+    return prompt;
+}
+
 const getResponse = async (message) => {
     if (lastMessages.length == 3) lastMessages.shift();
     lastMessages.push(message);
-    const response = await setTimeout(() => {return "ok";}, 2000)
-    createChatBubble(response, "tsundere");
-    lastMessages.push(response);
+
+    const header = new Headers({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer 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'
+    });
+    const url = "https://api.openai.com/v1/engines/text-davinci-002/completions";
+    const response = await fetch(url, {
+        method: "POST",
+        headers: header,
+        body: JSON.stringify({"prompt": getPrompt(), "max_tokens": 64})
+    });
+    
+    const answer = await response.json();
+    const data = answer.choices[0].text.trim();
+    createChatBubble(data, "tsundere");
+    lastMessages.shift();
+    lastMessages.push(data);
 }
 
 const sendMessage = () => {
     let message = userInput.value;
     if (!message) {
-        alert("Please type something before hitting the send button!");
+        alert("Please type something before sending the message!");
     }
     else {
         createChatBubble(message, "user");
