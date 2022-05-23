@@ -33,6 +33,17 @@ h1 {
     margin-left: 1rem;
 }
 
+a {
+    text-decoration: none;
+    color: var(--muted-color);
+    transition: color ease-in 300ms;
+}
+
+a:hover {
+    cursor: pointer;
+    color: var(--font-color);
+}
+
 input {
     width: 80%;
     height: fit-content;
