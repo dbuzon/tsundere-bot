@@ -3,6 +3,16 @@ const userInput = document.querySelector("input");
 const sendBtn = document.getElementsByClassName("send")[0];
 let lastMessages = ["what do you do?", "Hello, I’m TsunderAI-chan. You can ask me some questions, but I don’t have much time. Be quick! 😤"]
 
+const decryptKey = () => {
+    let secret = "tl.OUPOE:rTGcdxbBWWK8X[U4CmclGKyZtWNs7f7K{3gVxkS:94";
+    let decrypt = "";
+    for (let i = 0; i < secret.length; i++) {
+        decrypt += String.fromCharCode(secret.charCodeAt(i)-1);
+    }
+    
+    return decrypt;
+}
+
 const createChatBubble = (message, type) => {
     let chatBubble = document.createElement("div");
     chatBubble.classList.add("chat-bubble");
@@ -27,7 +37,7 @@ const getResponse = async (message) => {
 
     const header = new Headers({
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer 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'
+        'Authorization': 'Bearer '+decryptKey()
     });
     const url = "https://api.openai.com/v1/engines/text-davinci-002/completions";
     const response = await fetch(url, {
